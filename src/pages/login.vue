@@ -15,7 +15,7 @@
                         <label for="slideThree"></label>
                     </div>
                 <!-- </div> -->
-                <h2 class="form-signin-heading">{{ $t("please_sign_in") }}</h2>
+                <h2 class="form-signin-heading">{{ $t("Please_sign_in") }}</h2>
                 <label for="email" class="sr-only">Email address</label>
                 <input
                     v-model="email"
@@ -84,9 +84,12 @@
                     console.log('error get Promise reject!');
                 });
             },
-            ...mapActions([
-                'setLanguage'
-            ]),
+            // ...mapActions([
+            //     'setLanguage'
+            // ]),
+            setLanguage (lang) {
+                this.$i18n.locale = lang
+            }
 
         },
         created () {

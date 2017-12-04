@@ -22,10 +22,12 @@ const locales = {
 
 
 // Vue.config.lang = store.state.lang; // 從 state 獲取預設語言設定。
+// Vue.config.lang = store.state.lang
 
-var i18n = new VueI18n({
+console.log(locales)
+const i18n = new VueI18n({
   locale: store.state.lang,
-  messages: locales[store.state.lang]
+  messages: locales
 })
 
 Vue.config.productionTip = false
@@ -44,7 +46,7 @@ new Vue({
   store,
   template: '<App/>',
   components: { App },
-  i18n: i18n
+  i18n
 })
 
 

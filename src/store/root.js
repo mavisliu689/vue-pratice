@@ -1,7 +1,6 @@
 import * as types from './mutations_type.js';
 import Vue from 'vue';
-
-
+import App from '../App.vue'
 
 export const state = {
   loading: false,
@@ -47,7 +46,16 @@ export const mutations = {
   },
   [types.LANGUAGE] (state, setlang) {
     state.lang = setlang;
+    // console.log(Vue.locale)
     // 設定 Vue config 將會改變使用的語系
-    Vue.config.lang = state.lang;
+    // Vue.locale = state.lang;
+    // console.log(this.$i18n)
+    // console.log(app.$i18n)
   },
+}
+
+export default {
+  data () {
+    console.log(this.$i18n)
+  }
 }
